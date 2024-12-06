@@ -25,3 +25,20 @@ document.querySelector('#btn-donate-now').addEventListener('click', function() {
     // set the current amount in initial filed
     initialAmountField.innerText = currentAmount;
 });
+
+// display cards event
+document.querySelector('#btn-donation').addEventListener('click', function(){
+    // remove the hidden class list from donation cards section 
+    document.querySelector('#donation-card').classList.remove('hidden');
+    // add the hidden class to the history section
+    document.querySelector('#donation-history').classList.add('hidden');
+
+})
+// display history event
+document.querySelector('#btn-history').addEventListener('click', function(){
+    // remove the hidden class list from history section
+    document.querySelector('#donation-history').classList.remove('hidden');
+    // add the hidden class to the donation cards section
+    document.querySelector('#donation-card').classList.add('hidden');
+
+})
