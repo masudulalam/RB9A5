@@ -112,6 +112,8 @@ document.querySelector('#btn-donate-now-quota').addEventListener('click', functi
 
 // Show Donation Cards
 document.querySelector('#btn-donation').addEventListener('click', function () {
+    document.querySelector('#btn-donation').classList.add('bg-[#B4F461]');
+    document.querySelector('#btn-history').classList.remove('bg-[#B4F461]');
     // remove the hidden class list from donation cards section 
     document.querySelector('#card-container').classList.remove('hidden');
     // add the hidden class to the history section
@@ -120,6 +122,8 @@ document.querySelector('#btn-donation').addEventListener('click', function () {
 
 // Show Donation History
 document.querySelector('#btn-history').addEventListener('click', function () {
+    document.querySelector('#btn-history').classList.add('bg-[#B4F461]');
+    document.querySelector('#btn-donation').classList.remove('bg-[#B4F461]');
     // remove the hidden class list from history section
     document.querySelector('#donation-history').classList.remove('hidden');
     // add the hidden class to the donation cards section
