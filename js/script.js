@@ -1,46 +1,69 @@
-document.querySelector('#btn-donate-now').addEventListener('click', function () {
-    // get donation amount
-    let donationAmount = document.querySelector('#input-donation-amount').value;
-    // donation amount convert string to number
-    donationAmount = parseFloat(donationAmount);
+// Add Function in Donate Now Noakhali Button 
+document.querySelector('#btn-donate-now-noakhali').addEventListener('click', function () {
+    const donationAmount = getInputValueById('input-donation-amount-noakhali');
     if (typeof donationAmount !== 'number' || donationAmount <= 0) {
         alert('Please provide valid number.');
         return;
     }
-    // get previous donation amount
-    let preDonationAmount = document.querySelector('#display-donation-amount').innerText;
-    // previous donation amount convert string to number
-    preDonationAmount = parseFloat(preDonationAmount);
-    // added previous donation amount and donation amount together and store the variable 
+    const preDonationAmount = getTextFieldValueById('display-donation-amount-noakhali'); 
     const currentDonationAmount = preDonationAmount + donationAmount;
-    // Finally display the current donation amount
-    document.querySelector('#display-donation-amount').innerText = currentDonationAmount;
+    document.querySelector('#display-donation-amount-noakhali').innerText = currentDonationAmount;
 
-    // get the initial amount Field
-    const initialAmountField = document.querySelector('#initial-amount');
-    // get the initial amount
-    let initialAmount = initialAmountField.innerText;
-    initialAmount = parseFloat(initialAmount);
+    const initialAmount = getTextFieldValueById('initial-amount');
     const currentAmount = initialAmount - donationAmount;
     // set the current amount in initial filed
-    initialAmountField.innerText = currentAmount;
+    document.querySelector('#initial-amount').innerText = currentAmount;
 });
 
-// display cards event
+// Add Function in Donate Now Feni Button 
+document.querySelector('#btn-donate-now-feni').addEventListener('click', function () {
+    const donationAmount = getInputValueById('input-donation-amount-feni');
+    if (typeof donationAmount !== 'number' || donationAmount <= 0) {
+        alert('Please provide valid number.');
+        return;
+    }
+    const preDonationAmount = getTextFieldValueById('display-donation-amount-feni'); 
+    const currentDonationAmount = preDonationAmount + donationAmount;
+    document.querySelector('#display-donation-amount-feni').innerText = currentDonationAmount;
+
+    const initialAmount = getTextFieldValueById('initial-amount');
+    const currentAmount = initialAmount - donationAmount;
+    // set the current amount in initial filed
+    document.querySelector('#initial-amount').innerText = currentAmount;
+});
+
+// Add Function in Donate Now Quota Button 
+document.querySelector('#btn-donate-now-quota').addEventListener('click', function () {
+    const donationAmount = getInputValueById('input-donation-amount-quota');
+    if (typeof donationAmount !== 'number' || donationAmount <= 0) {
+        alert('Please provide valid number.');
+        return;
+    }
+    const preDonationAmount = getTextFieldValueById('display-donation-amount-quota'); 
+    const currentDonationAmount = preDonationAmount + donationAmount;
+    document.querySelector('#display-donation-amount-quota').innerText = currentDonationAmount;
+
+    const initialAmount = getTextFieldValueById('initial-amount');
+    const currentAmount = initialAmount - donationAmount;
+    // set the current amount in initial filed
+    document.querySelector('#initial-amount').innerText = currentAmount;
+});
+
+
+// Show Donation Cards Function
 document.querySelector('#btn-donation').addEventListener('click', function () {
     // remove the hidden class list from donation cards section 
-    document.querySelector('#donation-card').classList.remove('hidden');
+    document.querySelector('#card-container').classList.remove('hidden');
     // add the hidden class to the history section
     document.querySelector('#donation-history').classList.add('hidden');
-
 })
 
-// show donation history
+// Show Donation History Function
 document.querySelector('#btn-history').addEventListener('click', function () {
     // remove the hidden class list from history section
     document.querySelector('#donation-history').classList.remove('hidden');
     // add the hidden class to the donation cards section
-    document.querySelector('#donation-card').classList.add('hidden');
+    document.querySelector('#card-container').classList.add('hidden');
 
     // input donation amount
     let donationAmount = document.querySelector('#input-donation-amount').value;
@@ -58,13 +81,13 @@ document.querySelector('#btn-history').addEventListener('click', function () {
     div.classList.add('rounded-lg');
     div.classList.add('p-8');
     div.classList.add('mb-6');
+    div.classList.add('mt-8');
     div.innerHTML = `
         <h2 class='text-2xl mb-4'>${donationAmount} Taka is ${donateTitle}</h2>
         <p>${date}</p>
     `;
     // get donation history container
     const donationHistoryContainer = document.querySelector('#donation-history');
-    donationHistoryContainer.appendChild(div);
-    
+    donationHistoryContainer.appendChild(div); 
 })
 
