@@ -1,13 +1,17 @@
 // Add Function in Donate Now Noakhali Button 
 document.querySelector('#btn-donate-now-noakhali').addEventListener('click', function () {
+    // selected button bg
     document.querySelector('#btn-donate-now-noakhali').classList.add('bg-[#B4F461]');
     document.querySelector('#btn-donate-now-feni').classList.remove('bg-[#B4F461]');
     document.querySelector('#btn-donate-now-quota').classList.remove('bg-[#B4F461]');
+    // validation
     const donationAmount = getInputValueById('input-donation-amount-noakhali');
     if (typeof donationAmount !== 'number' || donationAmount <= 0) {
         alert('Please provide valid number.');
         return;
     }
+    // show modal
+    document.querySelector('#my_modal_5').showModal();
     const preDonationAmount = getTextFieldValueById('display-donation-amount-noakhali'); 
     const currentDonationAmount = preDonationAmount + donationAmount;
     document.querySelector('#display-donation-amount-noakhali').innerText = currentDonationAmount;
