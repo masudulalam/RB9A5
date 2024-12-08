@@ -2,6 +2,7 @@
 document.querySelector('#btn-donate-now-noakhali').addEventListener('click', function () {
     document.querySelector('#btn-donate-now-noakhali').classList.add('bg-[#B4F461]');
     document.querySelector('#btn-donate-now-feni').classList.remove('bg-[#B4F461]');
+    document.querySelector('#btn-donate-now-quota').classList.remove('bg-[#B4F461]');
     const donationAmount = getInputValueById('input-donation-amount-noakhali');
     if (typeof donationAmount !== 'number' || donationAmount <= 0) {
         alert('Please provide valid number.');
