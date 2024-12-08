@@ -1,5 +1,7 @@
 // Add Function in Donate Now Noakhali Button 
 document.querySelector('#btn-donate-now-noakhali').addEventListener('click', function () {
+    document.querySelector('#btn-donate-now-noakhali').classList.add('bg-[#B4F461]');
+    document.querySelector('#btn-donate-now-feni').classList.remove('bg-[#B4F461]');
     const donationAmount = getInputValueById('input-donation-amount-noakhali');
     if (typeof donationAmount !== 'number' || donationAmount <= 0) {
         alert('Please provide valid number.');
@@ -37,6 +39,9 @@ document.querySelector('#btn-donate-now-noakhali').addEventListener('click', fun
 
 // Add Function in Donate Now Feni Button 
 document.querySelector('#btn-donate-now-feni').addEventListener('click', function () {
+    document.querySelector('#btn-donate-now-feni').classList.add('bg-[#B4F461]');
+    document.querySelector('#btn-donate-now-noakhali').classList.remove('bg-[#B4F461]');
+    document.querySelector('#btn-donate-now-quota').classList.remove('bg-[#B4F461]');
     const donationAmount = getInputValueById('input-donation-amount-feni');
     if (typeof donationAmount !== 'number' || donationAmount <= 0) {
         alert('Please provide valid number.');
@@ -74,6 +79,10 @@ document.querySelector('#btn-donate-now-feni').addEventListener('click', functio
 
 // Add Function in Donate Now Quota Button 
 document.querySelector('#btn-donate-now-quota').addEventListener('click', function () {
+    document.querySelector('#btn-donate-now-quota').classList.add('bg-[#B4F461]');
+    document.querySelector('#btn-donate-now-noakhali').classList.remove('bg-[#B4F461]');
+    document.querySelector('#btn-donate-now-feni').classList.remove('bg-[#B4F461]');
+    
     const donationAmount = getInputValueById('input-donation-amount-quota');
     if (typeof donationAmount !== 'number' || donationAmount <= 0) {
         alert('Please provide valid number.');
