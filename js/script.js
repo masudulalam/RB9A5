@@ -52,6 +52,9 @@ document.querySelector('#btn-donate-now-feni').addEventListener('click', functio
         alert('Please provide valid number.');
         return;
     }
+    // show modal
+    document.querySelector('#my_modal_5').showModal();
+
     const preDonationAmount = getTextFieldValueById('display-donation-amount-feni'); 
     const currentDonationAmount = preDonationAmount + donationAmount;
     document.querySelector('#display-donation-amount-feni').innerText = currentDonationAmount;
@@ -84,15 +87,20 @@ document.querySelector('#btn-donate-now-feni').addEventListener('click', functio
 
 // Add Function in Donate Now Quota Button 
 document.querySelector('#btn-donate-now-quota').addEventListener('click', function () {
+    // add bg color in selected button
     document.querySelector('#btn-donate-now-quota').classList.add('bg-[#B4F461]');
     document.querySelector('#btn-donate-now-noakhali').classList.remove('bg-[#B4F461]');
     document.querySelector('#btn-donate-now-feni').classList.remove('bg-[#B4F461]');
     
     const donationAmount = getInputValueById('input-donation-amount-quota');
+    // validation
     if (typeof donationAmount !== 'number' || donationAmount <= 0) {
         alert('Please provide valid number.');
         return;
     }
+    // show modal
+    document.querySelector('#my_modal_5').showModal();
+
     const preDonationAmount = getTextFieldValueById('display-donation-amount-quota'); 
     const currentDonationAmount = preDonationAmount + donationAmount;
     document.querySelector('#display-donation-amount-quota').innerText = currentDonationAmount;
